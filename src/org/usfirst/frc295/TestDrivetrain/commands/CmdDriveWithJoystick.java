@@ -11,6 +11,7 @@
 
 package org.usfirst.frc295.TestDrivetrain.commands;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc295.TestDrivetrain.Robot;
 
@@ -19,9 +20,12 @@ import org.usfirst.frc295.TestDrivetrain.Robot;
  */
 public class CmdDriveWithJoystick extends Command 
 {
+	private Joystick         _joystickDriver;
+	
     public CmdDriveWithJoystick() 
     {
         requires(Robot.sysDriveTrain);
+        _joystickDriver = Robot.oi.getJoystickDriver();
     }
 
     // Called just before this Command runs the first time
@@ -32,6 +36,7 @@ public class CmdDriveWithJoystick extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
+    	Robot.sysDriveTrain.tankDrive(_joystickDriver.getRawAxis(1), _joystickDriver.getRawAxis(5));
     }
 
     // Make this return true when this Command no longer needs to run execute()

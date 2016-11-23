@@ -15,14 +15,12 @@ import org.usfirst.frc295.TestDrivetrain.RobotMap;
 import org.usfirst.frc295.TestDrivetrain.commands.*;
 
 import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.Joystick.AxisType;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -65,16 +63,16 @@ public class SysDriveTrain extends Subsystem
         // ==========================================================
         // SYS DRIVE TRAIN 
         // ==========================================================
-    	_escLeftFront = new VictorSP(RobotMap.PORT_DRIVE_ESC_LEFT_FRONT);
-        LiveWindow.addActuator("SysDriveTrain", "Esc Left Front", (Jaguar) _escLeftFront);
+    	_escLeftFront = new Talon(RobotMap.PORT_DRIVE_ESC_LEFT_FRONT);
+        LiveWindow.addActuator("SysDriveTrain", "Esc Left Front", (Talon) _escLeftFront);
         
-        _escLeftBack = new VictorSP(RobotMap.PORT_DRIVE_ESC_LEFT_BACK);
-        LiveWindow.addActuator("SysDriveTrain", "Esc Left Back", (Jaguar)  _escLeftBack);
+        _escLeftBack = new Talon(RobotMap.PORT_DRIVE_ESC_LEFT_BACK);
+        LiveWindow.addActuator("SysDriveTrain", "Esc Left Back", (Talon)  _escLeftBack);
         
-        _escRightFront = new VictorSP(RobotMap.PORT_DRIVE_ESC_RIGHT_FRONT);
+        _escRightFront = new Talon(RobotMap.PORT_DRIVE_ESC_RIGHT_FRONT);
         LiveWindow.addActuator("SysDriveTrain", "Esc Right Front", (Talon) _escRightFront);
         
-        _escRightBack = new VictorSP(RobotMap.PORT_DRIVE_ESC_RIGHT_BACK);
+        _escRightBack = new Talon(RobotMap.PORT_DRIVE_ESC_RIGHT_BACK);
         LiveWindow.addActuator("SysDriveTrain", "Esc Right Back", (Talon)  _escRightBack);
 
         
@@ -200,10 +198,10 @@ public class SysDriveTrain extends Subsystem
 		if(_bBackwardMode == true) 
         {
 			_robotDrive.tankDrive(_dDirectionScale * _dRotationScale * deadbandAdjust(right), 
-                                  _dDirectionScale * _dRotationScale * deadbandAdjust(left));
+                                  -1 * _dDirectionScale * _dRotationScale * deadbandAdjust(left));
 		} else {
 			_robotDrive.tankDrive(_dDirectionScale * _dRotationScale * deadbandAdjust(left),
-                                  _dDirectionScale * _dRotationScale * deadbandAdjust(right));
+                                  -1 * _dDirectionScale * _dRotationScale * deadbandAdjust(right));
 		}
 	}	
 	

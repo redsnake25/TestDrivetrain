@@ -36,7 +36,8 @@ public class CmdDriveWithJoystick extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-    	Robot.sysDriveTrain.tankDrive(_joystickDriver.getRawAxis(1), _joystickDriver.getRawAxis(5));
+//    	Robot.sysDriveTrain.tankDrive(_joystickDriver.getRawAxis(1), _joystickDriver.getRawAxis(5));
+    	Robot.sysDriveTrain.arcadeDrive(_joystickDriver.getRawAxis(1), _joystickDriver.getRawAxis(0));
     }
 
     // Make this return true when this Command no longer needs to run execute()

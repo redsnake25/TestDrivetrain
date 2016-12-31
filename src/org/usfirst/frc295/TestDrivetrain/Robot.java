@@ -38,7 +38,7 @@ public class Robot extends IterativeRobot
     public static OI oi;
 
     // MAJOR SYSTEMS
-    public static SysDriveTrain sysDriveTrain;
+    public static SysDriveTrainVictorSP sysDriveTrain;
 
 
 
@@ -51,8 +51,10 @@ public class Robot extends IterativeRobot
         RobotMap.init();
 
         // Instantiate Subsystems needed by the OI
-        sysDriveTrain = new SysDriveTrain();
-
+        //This line of code is for the forkliftbot
+        sysDriveTrain = new SysDriveTrainVictorSP();
+        //This line of code is for the protobot
+        //sysDriveTrain = new SysDriveTrain();
 
         // OI must be constructed after subsystems. If the OI creates Commands
         //(which it very likely will), subsystems are not guaranteed to be
@@ -149,6 +151,7 @@ public class Robot extends IterativeRobot
     {
         Scheduler.getInstance().run();
         log();
+        System.out.println("In teleopPeriodic");
     }
 
 

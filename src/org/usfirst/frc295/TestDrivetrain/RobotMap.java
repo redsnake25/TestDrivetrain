@@ -20,17 +20,27 @@ package org.usfirst.frc295.TestDrivetrain;
  */
 public class RobotMap 
 {
-	
-    public static final   short  PORT_DRIVE_ESC_LEFT_FRONT             = 1;
-    public static final   short  PORT_DRIVE_ESC_LEFT_BACK              = 2;
-    public static final   short  PORT_DRIVE_ESC_RIGHT_FRONT            = 3;
-    public static final   short  PORT_DRIVE_ESC_RIGHT_BACK             = 4;
+//These port constants are for the forkliftbot	
+    public static final   short  PORT_DRIVE_ESC_LEFT_FRONT             = 2;
+    public static final   short  PORT_DRIVE_ESC_LEFT_BACK              = 3;
+    public static final   short  PORT_DRIVE_ESC_RIGHT_FRONT            = 0;
+    public static final   short  PORT_DRIVE_ESC_RIGHT_BACK             = 1;
     
     public static final   short  PORT_DRIVE_ENC_RIGHT_CHAN1            = 15;
     public static final   short  PORT_DRIVE_ENC_RIGHT_CHAN2            = 16;
     public static final   short  PORT_DRIVE_ENC_LEFT_CHAN1             = 17;
     public static final   short  PORT_DRIVE_ENC_LEFT_CHAN2             = 18;
-
+//These port constants are for the protobot
+//    public static final   short  PORT_DRIVE_ESC_LEFT_FRONT             = 1;
+//    public static final   short  PORT_DRIVE_ESC_LEFT_BACK              = 2;
+//    public static final   short  PORT_DRIVE_ESC_RIGHT_FRONT            = 3;
+//    public static final   short  PORT_DRIVE_ESC_RIGHT_BACK             = 4;
+//    
+//    public static final   short  PORT_DRIVE_ENC_RIGHT_CHAN1            = 15;
+//    public static final   short  PORT_DRIVE_ENC_RIGHT_CHAN2            = 16;
+//    public static final   short  PORT_DRIVE_ENC_LEFT_CHAN1             = 17;
+//    public static final   short  PORT_DRIVE_ENC_LEFT_CHAN2             = 18;
+    
     public static void init()
     {
     }
